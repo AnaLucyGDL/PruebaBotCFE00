@@ -11,4 +11,4 @@ function readyDiscord(){
     console.log('Aloh');
 }
 
-client.login('ODc3Mjc0MTA2MjU1NTExNjEz.YRwPLQ.qAB1GHZIdNNfqKUgB17HvKILyLE');
+client.login('');
