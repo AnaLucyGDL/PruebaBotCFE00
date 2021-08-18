@@ -1,16 +1,22 @@
-const Discord = require("discord.js");
-const config = require("./config.json");
-const client = new Discord.Client();
+console.log('Hello');
 
-client.on('ready', ()=>{
-    var generalChannel = client.channels.cache.get("877271004999733269")
-    generalChannel.send("Hello")
-});
+const { Client, Intents } = require('discord.js');
 
-client.on('message', message =>{
-    if (message.content === '!scrapbot'){
-        message.channel.send('Hello');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+
+
+client.on('ready', readyDiscord);
+
+function readyDiscord(){
+    console.log('Aloh');
+}
+
+client.on('message', gotMessage);
+function gotMessage(msg){
+    console.log(msg.content);
+    if (msg.content === '!scrapbot'){
+        msg.reply('Hello');
     }
-});
+}
 
-client.login(config.BOT_TOKEN)
+client.login('');
